@@ -117,7 +117,7 @@ Rossmann/
 ├── requirements.txt
 └── README.md
 ```
-# ✅ 1. Installation
+## ✅ 1. Installation
 Clone the repository:
 
 ```bash
@@ -127,7 +127,7 @@ pip install -r requirements.txt
 
 ```
 
-# ✅ 2. Build the DuckDB database
+## ✅ 2. Build the DuckDB database
 
 ```bash
 python db/build_database.py
@@ -140,7 +140,7 @@ Creates:
 
 - fully engineered features table
 
-# ✅ 3. Train the model
+## ✅ 3. Train the model
 ```bash
 python model/train_model.py
 
@@ -151,7 +151,7 @@ This produces:
 
 - saved model in /model/store_sales_xgb.pkl
 
-# ✅ 4. Generate batch predictions
+## ✅ 4. Generate batch predictions
 
 ```bash
 python model/predict_all.py
@@ -161,7 +161,7 @@ Outputs:
 
 - predictions table with all features + final forecast
 
-# ✅ 5. Start FastAPI
+## ✅ 5. Start FastAPI
 
 ```bash
 uvicorn api.fastapi_app:app --reload
@@ -189,7 +189,7 @@ Response:
 
 
 ```
-# ✅ 6. Launch the Dash Dashboard
+## ✅ 6. Launch the Dash Dashboard
 ```bash
 python dashboard/app.py
 ```
@@ -200,7 +200,7 @@ Dashboard includes:
 ✅ Dynamic API calls
 ✅ AG Grid data table
 
-# 📊 Key Features Used in the Model
+## 📊 Key Features Used in the Model
 
 | Feature                                 | Description               |
 | --------------------------------------- | ------------------------- |
@@ -214,7 +214,7 @@ Dashboard includes:
 
 These features reflect actual retail forecasting logic.
 
-# ✅ Technologies
+## ✅ Technologies
 
 | Component | Tool           |
 | --------- | -------------- |
@@ -225,7 +225,7 @@ These features reflect actual retail forecasting logic.
 | UI        | Dash + AG Grid |
 | Packaging | Pip            |
 
-# ✅ Future Extensions
+## ✅ Future Extensions
 - Prophet / SARIMA baselines
 
 - Feature importance analysis
@@ -238,11 +238,11 @@ These features reflect actual retail forecasting logic.
 
 - Airflow / Prefect pipeline
 
-# ✅ Dataset
+## ✅ Dataset
 
 Kaggle competition:
 https://www.kaggle.com/competitions/rossmann-store-sales
 
-# 📜 License
+## 📜 License
 
 MIT License.
