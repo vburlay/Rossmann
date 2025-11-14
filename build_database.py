@@ -6,7 +6,6 @@ con = duckdb.connect(DB_PATH)
 # SQL-List um auszuführen
 sql_files = [
     "sql/load_raw.sql",
-    "sql/clean_data.sql",
     "sql/cleaned_sales.sql",
     "sql/build_features.sql",
 ]
