@@ -11,7 +11,7 @@ SELECT
     Promo,
     StateHoliday,       -- ВАЖНО! текст
     SchoolHoliday
-FROM read_csv_auto('data/raw/train.csv', types={
+FROM read_csv_auto('../data/raw/train.csv', types={
     'StateHoliday': 'VARCHAR'
 });
 
@@ -28,7 +28,7 @@ SELECT
     Promo2SinceWeek,
     Promo2SinceYear,
     PromoInterval
-FROM read_csv_auto('data/raw/store.csv'
+FROM read_csv_auto('../data/raw/store.csv'
     )
 ;
 
@@ -40,6 +40,6 @@ SELECT
     Promo,
     StateHoliday,
     SchoolHoliday
-FROM read_csv_auto('data/raw/test.csv'
+FROM read_csv_auto('../data/raw/test.csv'
     , types={
     'StateHoliday': 'VARCHAR'});

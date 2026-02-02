@@ -114,12 +114,15 @@ Rossmann/
 │
 ├── api/
 │   └── fastapi_app.py           # REST API: /filter?store=&date=
+├── notebooks/
+│   └── rossmann_eda.ipynb       # REST EDA
 │
 ├── dashboard/
 │   └── app.py                   # Dash dashboard (AG Grid + FastAPI data)
 │
 ├── config.py                    # central file paths (DB, model)
 ├── requirements.txt
+├── EDA_summary.md
 └── README.md
 ```
 ## ✅ 1. Installation
