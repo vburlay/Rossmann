@@ -115,7 +115,7 @@ Rossmann/
 ├── api/
 │   └── fastapi_app.py           # REST API: /filter?store=&date=
 ├── notebooks/
-│   └── rossmann_eda.ipynb       # REST EDA
+│   └── rossmann_eda.ipynb       # EDA
 │
 ├── dashboard/
 │   └── app.py                   # Dash dashboard (AG Grid + FastAPI data)
