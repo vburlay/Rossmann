@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 import duckdb
 import pandas as pd
+from pandas import CategoricalDtype
 from config import DB_PATH
 import uvicorn
 
@@ -29,7 +30,7 @@ def filter_predictions(store: int, date: str):
 
     # 2. Convert all categorical columns to string
     for col in df.columns:
-        if pd.api.types.is_categorical_dtype(df[col]):
+        if isinstance(df[col].dtype, CategoricalDtype):
             df[col] = df[col].astype(str)
 
     # 3. Convert all integer columns to object before fillna("None")
