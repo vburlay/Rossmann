@@ -68,18 +68,21 @@ val_pred = model.predict(val[feature_cols])
 mae = mean_absolute_error(val["Sales"], val_pred)
 
 print(f"Validation MAE: {mae:,.2f}")
+#Validation MAE: 403.84
 
+#Baseline
+naive = val.groupby("Store")["Sales"].shift(7) #strong baseline
+mae_naive = mean_absolute_error(val["Sales"][~naive.isna()], naive.dropna())
+print(mae_naive)
+#Naive (lag-7) MAE ≈ 2480
+
+#Median Absolute Percentage Error (Median APE)
+#Oбычный MAPE: взрывается при малых продажах, чувствителен к выбросам
+#median APE: устойчив к аномалиям отражает «типичное» качество прогноза
+print((np.abs(val["Sales"] - val_pred) / val["Sales"]).median())
+#Median Absolute Percentage Error (Median APE) = 0.0479  ≈ 4.8%
 # =========================
 # Save model
 # =========================
 joblib.dump(model, BASE_DIR / "model/store_sales_xgb.pkl")
 print("✅ Model saved")
-
-#Evaluation
-naive = val.groupby("Store")["Sales"].shift(7) #strong baseline
-mae_naive = mean_absolute_error(val["Sales"][~naive.isna()], naive.dropna())
-print(mae_naive)
-#Median Absolute Percentage Error (Median APE)
-#Oбычный MAPE: взрывается при малых продажах, чувствителен к выбросам
-#median APE: устойчив к аномалиям отражает «типичное» качество прогноза
-print((np.abs(val["Sales"] - val_pred) / val["Sales"]).median())
